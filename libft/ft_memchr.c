@@ -6,11 +6,12 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:10:07 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/16 10:29:31 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:24 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

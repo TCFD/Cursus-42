@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:39:45 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/16 10:25:44 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:14:27 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen2(char *str)
 {

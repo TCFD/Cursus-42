@@ -6,11 +6,12 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:40:33 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/15 14:31:08 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:15:04 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

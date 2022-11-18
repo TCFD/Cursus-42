@@ -6,13 +6,14 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:24:46 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/10 09:11:51 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:31 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

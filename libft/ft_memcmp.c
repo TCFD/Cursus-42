@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:32:35 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/15 14:42:42 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:26 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

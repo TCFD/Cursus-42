@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:15:43 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/17 15:53:44 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 17:27:02 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

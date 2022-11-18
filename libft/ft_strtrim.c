@@ -6,40 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:35:18 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/17 11:19:51 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:14:48 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-
-size_t	ft_strlen2(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = malloc((ft_strlen2((char *)(s)) + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	while (s[i])
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
+#include "libft.h"
 
 char	*firstpart(char const *s1, char const *set)
 {
@@ -76,7 +49,7 @@ char	*secondpart(char const *set, char *str)
 	int		j;
 	int		boolean;
 
-	i = ft_strlen2(str) - 1;
+	i = ft_strlen(str) - 1;
 	while (str[i])
 	{
 		boolean = 0;

@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:22:59 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/16 16:00:36 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:14:00 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 size_t	slen(char *str)
 {

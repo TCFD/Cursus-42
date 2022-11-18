@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:14:40 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/16 09:14:49 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:30 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy2(void *dest, const void *src, size_t n)
 {

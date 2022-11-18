@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:23:27 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/16 09:13:30 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:36 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	ft_putchar_fd2(char c, int fd)
 {

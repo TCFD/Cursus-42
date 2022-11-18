@@ -6,12 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:41:32 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/17 14:32:19 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:23 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 int	how_many_digits(int n)
 {

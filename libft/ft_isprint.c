@@ -6,9 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:45:18 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/15 14:43:58 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:13:21 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int argument)
 {
