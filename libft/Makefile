@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 12:06:39 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/18 09:46:33 by rciaze           ###   ########.fr        #
+#    Updated: 2022/11/20 00:29:42 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
@@ -25,4 +26,6 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
+
+
 .PHONY : all re clean fclean 

@@ -3,26 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 08:56:17 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:07 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/20 00:33:28 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
 #include <stdio.h>
 #include "libft.h"
-
-size_t	ft_strlen2(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -38,7 +27,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	if (size != 0)
 		dst[i] = '\0';
-	return (ft_strlen2((char *)(src)));
+	return (ft_strlen((char *)(src)));
 }
 
 /* int	main(void)

@@ -3,26 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:39:45 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:27 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/19 22:27:26 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include "libft.h"
-
-size_t	ft_strlen2(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strrchr(const char *str, int c)
 {
@@ -33,7 +23,7 @@ char	*ft_strrchr(const char *str, int c)
 	boolean = 0;
 	i = 0;
 	if (c == '\0')
-		return ((char *)(str) + ft_strlen2((char *)(str)));
+		return ((char *)(str) + ft_strlen((char *)(str)));
 	while (str[i])
 	{
 		if (str[i] == (unsigned char)(c))

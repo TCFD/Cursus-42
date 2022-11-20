@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:45:13 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:13:43 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/19 22:25:04 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 #include <string.h>
 #include "libft.h"
 
-size_t	ft_strlen2(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strchr(const char *str, int c)
 {
 	int		i;
 
 	i = 0;
 	if (c == '\0')
-		return ((char *)(str) + ft_strlen2((char *)(str)));
+		return ((char *)(str) + ft_strlen((char *)(str)));
 	while (str[i])
 	{
 		if (str[i] == (unsigned char)(c))
