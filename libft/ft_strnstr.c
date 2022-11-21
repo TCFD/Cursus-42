@@ -3,41 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:48:16 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/19 22:48:09 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/21 10:14:16 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
+#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
-	int	mem;
-	int	boolean;
+	size_t	i;
+	int		j;
+	int		mem;
 
 	i = 0;
-	boolean = 0;
 	if (little[0] == '\0')
 		return ((char *)(big));
-	while (big[i] && i < (int)len)
+	while (big[i] && i < len)
 	{
-		if (big[i] == little[0])
+		j = 0;
+		if (big[i] == little[j])
 		{
 			mem = i;
-			j = 0;
-			while (big[i] == little[j] && i++ < (int)len)
+			i--;
+			while (big[++i] == little[j] && i < len)
 				j++;
-			if (i < (int)len && little[j] == '\0')
-				boolean = 1;
+			if (little[j] == '\0')
+				return ((char *)(big + mem));
+			else
+				i = mem + 1;
 		}
-		if (boolean)
-			return ((char *)(big + mem));
-		i++;
+		else
+			i++;
 	}
 	return (NULL);
 }
+
+/* int	main(void)
+{
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+
+	printf("%s\n", ft_strnstr(haystack, "a", -1));
+	printf("%s\n\n", strnstr(haystack, "a", -1));
+	printf("%s\n", ft_strnstr(haystack, needle, -1));
+	printf("%s\n\n", strnstr(haystack, needle, -1));
+	printf("%s\n", ft_strnstr(haystack, "aaabc", 5));
+	printf("%s\n\n", strnstr(haystack, "aaabc", 5));
+	printf("%s\n", ft_strnstr("aaaab", "aaab", 5));
+	printf("%s\n", strnstr("aaaab", "aaab", 5));
+} */

@@ -1,114 +1,65 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-e2r8p4.clusters.42paris.fr
-Linux 5.15.0-52-generic x86_64
+e1r6p19.clusters.42paris.fr
+Linux 5.4.0-131-generic x86_64
 $> date
-Fri Nov 18 05:59:27 PM CET 2022
+Mon 21 Nov 2022 06:16:44 PM CET
 $> gcc --version
-gcc (Ubuntu 10.4.0-4ubuntu1~22.04) 10.4.0
+gcc (Ubuntu 10.3.0-1ubuntu1~20.04) 10.3.0
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $> clang --version
-Ubuntu clang version 12.0.1-19ubuntu3
+Ubuntu clang version 12.0.0-3ubuntu1~20.04.5
 Target: x86_64-pc-linux-gnu
 Thread model: posix
 InstalledDir: /usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+/mnt/nfs/homes/rciaze/Desktop/libft-war-machine/dirlibft/libft.h: Error!
+Error: MIXED_SPACE_TAB      (line:  59, col:   7):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  59, col:   7):	Found space when expecting tab
+Error: MIXED_SPACE_TAB      (line:  60, col:   5):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  60, col:   5):	Found space when expecting tab
+Error: MIXED_SPACE_TAB      (line:  61, col:   4):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  61, col:   4):	Found space when expecting tab
+Error: MIXED_SPACE_TAB      (line:  63, col:   5):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  63, col:   9):	Found space when expecting tab
+Norme check failed
 
 = Compiling libft ==============================================================
 $> make re
 rm -f *.o
 rm -f libft.a
-cc -Wall -Wextra -Werror -c *.c
-ar rc libft.a *.o 
+cc -Wall -Wextra -Werror -c ft_atoi.c ft_tolower.c ft_toupper.c ft_itoa.c ft_isalpha.c ft_isascii.c ft_isalnum.c ft_isdigit.c ft_isprint.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_strmapi.c ft_strlcpy.c ft_strlcat.c ft_bzero.c ft_memcpy.c ft_memset.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_calloc.c 
+ar rc libft.a ft_atoi.o ft_tolower.o ft_toupper.o ft_itoa.o ft_isalpha.o ft_isascii.o ft_isalnum.o ft_isdigit.o ft_isprint.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_strmapi.o ft_strlcpy.o ft_strlcat.o ft_bzero.o ft_memcpy.o ft_memset.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_calloc.o
 ranlib libft.a
 
 $> make bonus
-make: *** No rule to make target 'bonus'.  Stop.
+cc -Wall -Wextra -Werror -c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c 
+ar rc libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o
+ranlib libft.a
 
 $> ls -la libft.a
--rw-r--r-- 1 rciaze 2022_paris 48200 Nov 18 17:59 /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 rciaze 2022_paris 53126 Nov 21 18:16 /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/dirlibft/libft.a
 
-= Part2_functions ==============================================================
+= Bonus_functions ==============================================================
 
-= ft_split.c ===================================================================
-$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_split.c main.c libft.a -o user_exe
+= ft_lstadd_back_bonus.c =======================================================
+$> norminette ft_lstadd_back_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_back.c main.c libft.a -o user_exe
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
-
-Diff OK :D
-= Test 2 ===================================================
-$> ./user_exe 02
-$> diff -U 3 user_output_test02 test02.output
---- /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/user_output_test02	2022-11-18 17:59:30.788399029 +0100$
-+++ /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/test02.output	2022-11-15 11:10:31.870949127 +0100$
-@@ -0,0 +1,12 @@$
+--- /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Bonus_functions/ft_lstadd_back/user_output_test01	2022-11-21 18:16:46.751293296 +0100$
++++ /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Bonus_functions/ft_lstadd_back/test01.output	2022-11-15 11:10:31.230945300 +0100$
+@@ -0,0 +1,4 @@$
 +lorem$
 +ipsum$
 +dolor$
 +sit$
-+amet,$
-+consectetur$
-+adipiscing$
-+elit.$
-+Sed$
-+non$
-+risus.$
-+Suspendisse$
 
 Diff KO :(
-= Test 3 ===================================================
-$> ./user_exe 03
-$> diff -U 3 user_output_test03 test03.output
-
-Diff OK :D
-= Test 4 ===================================================
-$> ./user_exe 04
-$> diff -U 3 user_output_test04 test04.output
---- /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/user_output_test04	2022-11-18 17:59:31.324402278 +0100$
-+++ /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/test04.output	2022-11-15 11:10:31.873949145 +0100$
-@@ -0,0 +1,25 @@$
-+lorem $
-+psum dolor s$
-+t amet, consectetur ad$
-+p$
-+sc$
-+ng el$
-+t. Sed non r$
-+sus. Suspend$
-+sse lectus tortor, d$
-+gn$
-+ss$
-+m s$
-+t amet, ad$
-+p$
-+sc$
-+ng nec, ultr$
-+c$
-+es sed, dolor. Cras elementum ultr$
-+c$
-+es d$
-+am. Maecenas l$
-+gula massa, var$
-+us a, semper congue, eu$
-+smod non, m$
-+.$
-
-Diff KO :(
-= Test 5 ===================================================
-$> ./user_exe 05
-$> diff -U 3 user_output_test05 test05.output
---- /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/user_output_test05	2022-11-18 17:59:31.858405513 +0100$
-+++ /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Part2_functions/ft_split/test05.output	2022-11-15 11:10:31.875949157 +0100$
-@@ -0,0 +1 @@$
-+lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.$
-
-Diff KO :(
-= Test 6 ===================================================
-$> ./user_exe 06
-$> diff -U 3 user_output_test06 test06.output
-
-Diff OK :D

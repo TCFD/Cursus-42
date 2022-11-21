@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:24:46 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/21 17:59:17 by rciaze           ###   ########.fr       */
+/*   Created: 2022/11/21 17:38:19 by rciaze            #+#    #+#             */
+/*   Updated: 2022/11/21 18:03:14 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	while (lst)
 	{
-		((char *)s)[i] = c;
 		i++;
+		lst = lst->next;
 	}
-	return (s);
+	return (i);
 }
 
 /* int	main(void)
 {
-	char s[] = "sdfsdf", t[] = "sdfsdf";
+	t_list	*liste1;
+	t_list	*liste2;
+	t_list	*liste3;
+	t_list	*liste4;
 
-	memset(s, '0', 5);
-	ft_memset(t, '0', 5);
-	printf("%s\n%s", s, t);
+	liste1 = ft_lstnew((void *) 'a');
+	liste2 = ft_lstnew((void *) 'b');
+	liste3 = ft_lstnew((void *) 'c');
+	liste4 = ft_lstnew((void *) 'd');
+
+	ft_lstadd_front(&liste4, liste3);
+	ft_lstadd_front(&liste3, liste2);
+	ft_lstadd_front(&liste2, liste1);
+	printf("%d", ft_lstsize(liste1));
 } */
