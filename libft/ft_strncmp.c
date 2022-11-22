@@ -6,11 +6,10 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:02:29 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:21 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:52:05 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

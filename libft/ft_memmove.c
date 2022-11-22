@@ -6,26 +6,12 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:14:40 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/20 13:13:39 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:55:22 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-void	*ft_memcypy(void *dest, const void *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char *)(dest))[i] = ((char *)(src))[i];
-		i++;
-	}
-	return (dest);
-}
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -33,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	i = n - 1;
 	if (dest < src)
-		ft_memcypy(dest, src, n);
+		ft_memcpy(dest, src, n);
 	else
 	{
 		while ((int) i > -1)

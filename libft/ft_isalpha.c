@@ -6,11 +6,10 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:14:17 by zbp15             #+#    #+#             */
-/*   Updated: 2022/11/18 18:13:08 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:49:00 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_isalpha(int argument)

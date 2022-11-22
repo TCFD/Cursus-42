@@ -6,18 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:23:27 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:13:36 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:55:08 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
-
-void	ft_putchar_fd2(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -37,7 +30,7 @@ void	ft_putnbr_fd(int n, int fd)
 		i = n % 10 + 48;
 		if (n / 10 > 0)
 			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd2(i, fd);
+		write(fd, &i, 1);
 	}
 }
 

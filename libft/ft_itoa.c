@@ -6,15 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:41:32 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:13:23 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:50:28 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-int	how_many_digits(int n)
+int	how_many_digits(long int n)
 {
 	int	i;
 
@@ -40,14 +38,14 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		i;
 
+	if (n == -2147483648)
+		return ("-2147483648");
 	boolean = 0;
 	i = how_many_digits(n) - 1;
 	str = malloc(how_many_digits(n) + 1 * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[how_many_digits(n)] = '\0';
-	if (n == -2147483648)
-		return ("-2147483648");
 	if (n < 0)
 	{
 		str[0] = '-';

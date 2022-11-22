@@ -6,12 +6,10 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:35:18 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/22 11:23:49 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:51:21 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*start_search(char const *s1, char const *set)

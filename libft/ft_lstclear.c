@@ -6,11 +6,10 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 12:18:32 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/22 12:51:35 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:51:46 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))

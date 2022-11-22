@@ -6,13 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:48:16 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/21 10:14:16 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:51:17 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

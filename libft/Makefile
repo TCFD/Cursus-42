@@ -6,7 +6,7 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 12:06:39 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/22 12:18:24 by rciaze           ###   ########.fr        #
+#    Updated: 2022/11/22 14:21:38 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,8 @@ ft_lstlast.c \
 ft_lstadd_back.c \
 ft_lstdelone.c \
 ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c \
 
 OBJ = ${SRCS:.c=.o}
 

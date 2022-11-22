@@ -6,12 +6,10 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:33:17 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/18 18:12:50 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:48:10 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)

@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:59:40 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/20 00:33:17 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/22 17:51:01 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 int	how_many_words(char const *s, char c)
 {
@@ -58,14 +56,14 @@ char	**attribution(char const *s, char c, char **str, int wordc)
 		while (s[i] == c && s[i])
 			i++;
 		start = i;
-		while (s[i] != c && s[i])
-		{
-			i++;
+		while (s[i] != c && s[i++])
 			len++;
-		}
 		str[j] = ft_substr(s, start, len);
 		if (!str[j])
+		{
 			free_all(str, wordc);
+			return (NULL);
+		}
 		j++;
 	}
 	str[j] = NULL;

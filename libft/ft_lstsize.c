@@ -6,12 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:38:19 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/21 18:03:14 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:50:38 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_lstsize(t_list *lst)
 {

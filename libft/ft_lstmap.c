@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 10:45:13 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/22 17:51:04 by rciaze           ###   ########.fr       */
+/*   Created: 2022/11/22 14:21:29 by rciaze            #+#    #+#             */
+/*   Updated: 2022/11/22 15:34:44 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int		i;
+	t_list	*rlst;
+	t_list	*temp;
 
-	i = 0;
-	if (c == '\0')
-		return ((char *)(str) + ft_strlen((char *)(str)));
-	while (str[i])
+	if (!lst)
+		return (NULL);
+	temp = ft_lstnew((*f)(lst->content));
+	if (!temp)
+		return (NULL);
+	rlst = temp;
+	lst = lst->next;
+	while (lst)
 	{
-		if (str[i] == (unsigned char)(c))
-			return ((char *)(str) + i);
-		i++;
+		ft_lstadd_back(&temp, ft_lstnew((*f)(lst->content)));
+		if (!temp->next)
+		{
+			ft_lstclear(&rlst, del);
+			return (NULL);
+		}
+		temp = temp->next;
+		lst = lst->next;
 	}
-	return (NULL);
+	return (rlst);
 }
-
-/* int	main(void)
-{
-	char s[] = "tripouille";
-
-	printf("%s\n", ft_strchr(s, 'o' + 256));
-	printf("%s\n", strchr(s, 'o' + 256));
-} */
