@@ -1,17 +1,17 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-e1r6p19.clusters.42paris.fr
-Linux 5.4.0-131-generic x86_64
+e3r8p18.clusters.42paris.fr
+Linux 5.15.0-52-generic x86_64
 $> date
-Mon 21 Nov 2022 06:16:44 PM CET
+Tue Nov 22 12:51:36 PM CET 2022
 $> gcc --version
-gcc (Ubuntu 10.3.0-1ubuntu1~20.04) 10.3.0
+gcc (Ubuntu 10.4.0-4ubuntu1~22.04) 10.4.0
 Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $> clang --version
-Ubuntu clang version 12.0.0-3ubuntu1~20.04.5
+Ubuntu clang version 12.0.1-19ubuntu3
 Target: x86_64-pc-linux-gnu
 Thread model: posix
 InstalledDir: /usr/bin
@@ -27,6 +27,10 @@ Error: MIXED_SPACE_TAB      (line:  61, col:   4):	Mixed spaces and tabs
 Error: SPACE_REPLACE_TAB    (line:  61, col:   4):	Found space when expecting tab
 Error: MIXED_SPACE_TAB      (line:  63, col:   5):	Mixed spaces and tabs
 Error: SPACE_REPLACE_TAB    (line:  63, col:   9):	Found space when expecting tab
+Error: MIXED_SPACE_TAB      (line:  64, col:   5):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  64, col:   9):	Found space when expecting tab
+Error: MIXED_SPACE_TAB      (line:  65, col:   5):	Mixed spaces and tabs
+Error: SPACE_REPLACE_TAB    (line:  65, col:   9):	Found space when expecting tab
 Norme check failed
 
 = Compiling libft ==============================================================
@@ -38,28 +42,21 @@ ar rc libft.a ft_atoi.o ft_tolower.o ft_toupper.o ft_itoa.o ft_isalpha.o ft_isas
 ranlib libft.a
 
 $> make bonus
-cc -Wall -Wextra -Werror -c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c 
-ar rc libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o
+cc -Wall -Wextra -Werror -c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c 
+ar rc libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o
 ranlib libft.a
 
 $> ls -la libft.a
--rw-r--r-- 1 rciaze 2022_paris 53126 Nov 21 18:16 /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 rciaze 2022_paris 55464 Nov 22 12:51 /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/dirlibft/libft.a
 
 = Bonus_functions ==============================================================
 
-= ft_lstadd_back_bonus.c =======================================================
-$> norminette ft_lstadd_back_bonus.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_back.c main.c libft.a -o user_exe
+= ft_lstclear_bonus.c ==========================================================
+$> norminette ft_lstclear_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstclear.c main.c libft.a -o user_exe
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Bonus_functions/ft_lstadd_back/user_output_test01	2022-11-21 18:16:46.751293296 +0100$
-+++ /mnt/nfs/homes/rciaze/Desktop/libft-war-machine/tests/Bonus_functions/ft_lstadd_back/test01.output	2022-11-15 11:10:31.230945300 +0100$
-@@ -0,0 +1,4 @@$
-+lorem$
-+ipsum$
-+dolor$
-+sit$
 
-Diff KO :(
+Diff OK :D

@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:35:18 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/21 09:20:17 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/22 11:23:49 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*end_search(char const *set, char *str)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	
+
 	str = start_search(s1, set);
 	return (end_search(set, str));
 }
