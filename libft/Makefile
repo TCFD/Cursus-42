@@ -6,7 +6,7 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 12:06:39 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/22 14:21:38 by rciaze           ###   ########.fr        #
+#    Updated: 2022/11/25 15:07:40 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ ft_memchr.c \
 ft_memcmp.c \
 ft_calloc.c \
 
-SRCS_BONUS	=	ft_lstnew.c \
+SRCS_BONUS = ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \

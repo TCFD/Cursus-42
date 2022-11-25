@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:34:54 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/22 17:51:44 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/25 10:32:17 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*re;
 
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	if (__SIZE_MAX__ / nmemb > size)
 	{
 		re = malloc(nmemb * size);
