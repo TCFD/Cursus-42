@@ -6,11 +6,12 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:38:19 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/22 17:50:38 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/25 19:53:56 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_lstsize(t_list *lst)
 {
@@ -25,7 +26,7 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-/* int	main(void)
+ int	main(void)
 {
 	t_list	*liste1;
 	t_list	*liste2;
@@ -41,4 +42,4 @@ int	ft_lstsize(t_list *lst)
 	ft_lstadd_front(&liste3, liste2);
 	ft_lstadd_front(&liste2, liste1);
 	printf("%d", ft_lstsize(liste1));
-} */
+} 
