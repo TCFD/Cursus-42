@@ -6,11 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:55:39 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/25 19:08:19 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/28 08:43:52 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *s)
 {

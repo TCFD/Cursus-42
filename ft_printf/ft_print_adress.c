@@ -1,25 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_adress.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 09:51:08 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/28 08:46:05 by rciaze           ###   ########.fr       */
+/*   Created: 2022/11/28 09:00:21 by rciaze            #+#    #+#             */
+/*   Updated: 2022/11/28 17:00:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	ft_putchar(char c)
+int	what_size_malloc(void *p)
 {
-	write(1, &c, 1);
-	return (1);
+	int	count;
+	long long int	n;
+
+	n = (long long int)p;
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		count++;
+		n = -n;
+	}
+	while (n)
+	{
+		count++;
+		n /= 16;
+	}
+	return (count);
 }
 
-/* int main(void)
+/* int		ft_print_adress(void *p)
 {
-	ft_putchar_fd('r', 1);
-	return 0;
-} */
+	
+}
+ */
+int	main(void)
+{
+	void	*p;
+	int		i;
+
+	i = 0;
+	p = &i;
+	printf("%p\n\n", p);
+	printf("%d", what_size_malloc(p));
+	return (0);
+}

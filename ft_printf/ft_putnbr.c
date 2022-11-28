@@ -6,12 +6,11 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:57:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/25 19:30:51 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/28 09:00:03 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "libprintf.h"
+#include "ft_printf.h"
 
 void	ft_putnbr(int n)
 {

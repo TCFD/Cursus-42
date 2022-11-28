@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libprintf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 18:15:38 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/25 19:36:03 by rciaze           ###   ########.fr       */
+/*   Created: 2022/10/05 17:04:47 by zbp15             #+#    #+#             */
+/*   Updated: 2022/11/28 08:57:42 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-int		ft_printf(const char*, ...);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-int		how_many_digits(long int n);
-void	ft_putnbr(int n);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
-#endif
+/* int main(int argc, char const *argv[])
+{
+	printf("%d",ft_strlen(argv[argc-1]));
+	return 0;
+} */

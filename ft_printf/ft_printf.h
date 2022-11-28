@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 09:51:08 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/28 08:46:05 by rciaze           ###   ########.fr       */
+/*   Created: 2022/11/25 18:15:38 by rciaze            #+#    #+#             */
+/*   Updated: 2022/11/28 14:32:55 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-/* int main(void)
-{
-	ft_putchar_fd('r', 1);
-	return 0;
-} */
+int		ft_printf(const char *, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+void	ft_putnbr(int n);
+size_t	ft_strlen(const char *str);
+int		how_many_digits(long int n);
+char	*ft_strdup(const char *s);
+int		ft_print_adress(void *p);
+
+#endif	
