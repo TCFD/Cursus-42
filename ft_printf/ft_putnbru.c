@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 09:51:08 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/29 15:41:43 by zbp15            ###   ########.fr       */
+/*   Created: 2022/11/29 17:27:36 by zbp15             #+#    #+#             */
+/*   Updated: 2022/11/29 17:51:13 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putchar(char c)
+void	ft_putnbr2(unsigned int n)
 {
-	write(1, &c, 1);
-	return (1);
+	char	i;
+
+	if (n == 0)
+		write(1, "0", 1);
+	else
+	{
+		i = n % 10 + 48;
+		if (n / 10 > 0)
+			ft_putnbr2(n / 10);
+		write(1, &i, 1);
+	}
 }
 
-/* int main(void)
+int	how_many_digits2(unsigned long int n)
 {
-	ft_putchar_fd('r', 1);
-	return 0;
-} */
+	int	i;
+
+	ft_putnbr2(n);
+	i = 0;
+	if (n == 0)
+		i = 1;
+	while (n > 0)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
+}

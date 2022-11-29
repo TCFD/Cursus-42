@@ -1,56 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 18:57:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/29 17:49:18 by zbp15            ###   ########.fr       */
+/*   Created: 2022/11/29 17:34:50 by zbp15             #+#    #+#             */
+/*   Updated: 2022/11/29 17:49:10 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int n)
+int	how_many_digits3(unsigned int n)
 {
-	char	i;
+	int				count;
 
-	if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (n == 0)
-		write(1, "0", 1);
-	else if (n < 0)
+	count = 0;
+	if (n == 0)
+		return (1);
+	while (n)
 	{
-		write(1, "-", 1);
-		ft_putnbr(-n);
+		count++;
+		n /= 16;
 	}
-	else
-	{
-		i = n % 10 + 48;
-		if (n / 10 > 0)
-			ft_putnbr(n / 10);
-		write(1, &i, 1);
-	}
+	return (count);
 }
 
-int	how_many_digits(long int n)
+int	ft_print_hexa(unsigned int n, char *base)
 {
-	int	i;
+	char	*str;
+	int		i;
+	int		c;
 
-	ft_putnbr(n);
-	i = 0;
-	if (n == 0)
-		i = 1;
-	if (n < 0)
+	c = how_many_digits3(n);
+	str = malloc ((c + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	i = c;
+	while (i-- > 0)
 	{
-		i++;
-		n = -n;
+		str[i] = base[n % 16];
+		n /= 16;
 	}
-	while (n > 0)
-	{
-		i++;
-		n = n / 10;
-	}
-	return (i);
+	str[c] = '\0';
+	ft_putstr(str);
+	free(str);
+	return (c);
 }

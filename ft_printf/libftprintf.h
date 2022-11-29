@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 18:15:38 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/28 14:32:55 by rciaze           ###   ########.fr       */
+/*   Created: 2022/11/29 17:50:33 by zbp15             #+#    #+#             */
+/*   Updated: 2022/11/29 18:23:13 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *str, ...);
 int		ft_putchar(char c);
 int		ft_putstr(char *s);
 void	ft_putnbr(int n);
 size_t	ft_strlen(const char *str);
 int		how_many_digits(long int n);
 char	*ft_strdup(const char *s);
-int		ft_print_adress(void *p);
+int		ft_print_adress(void *p, char *base, int i);
+int		how_many_digits2(unsigned long int n);
+void	ft_putnbr2(unsigned int n);
+int		ft_print_hexa(unsigned int n, char *base);
+int		how_many_digits3(unsigned int n);
 
 #endif	

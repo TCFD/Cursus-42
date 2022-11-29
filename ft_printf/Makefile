@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
+#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 18:12:08 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/28 16:50:07 by rciaze           ###   ########.fr        #
+#    Updated: 2022/11/29 17:44:47 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 COMP = cc $(FLAGS) -c
 all : $(NAME)
@@ -22,6 +22,8 @@ ft_putstr.c \
 ft_print_adress.c \
 ft_strdup.c \
 ft_strlen.c \
+ft_putnbru.c \
+ft_printhexa.c 
 
 OBJ = ${SRCS:.c=.o}
 

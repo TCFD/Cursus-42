@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:15:26 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/28 14:38:52 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/29 18:23:22 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "libftprintf.h"
 
 int	what_to_print(va_list list, char c)
 {
@@ -19,10 +18,16 @@ int	what_to_print(va_list list, char c)
 		return (ft_putchar(va_arg(list, int)));
 	if (c == 's')
 		return (ft_putstr(va_arg(list, char *)));
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 		return (how_many_digits(va_arg(list, int)));
 	if (c == 'p')
-		return (ft_print_adress(va_arg(list, void *)));
+		return (ft_print_adress(va_arg(list, void *), "0123456789abcdef", 0));
+	if (c == 'u')
+		return (how_many_digits2(va_arg(list, unsigned int)));
+	if (c == 'x')
+		return (ft_print_hexa(va_arg(list, unsigned int), "0123456789abcdef"));
+	if (c == 'X')
+		return (ft_print_hexa(va_arg(list, unsigned int), "0123456789ABCDEF"));
 	if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
@@ -55,13 +60,12 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }	
 
-int	main(void)
+/* int	main(void)
 {
-	void	*p;
-	int		i;
 
-	i = 0;
-	p = &i;
-	printf("\nReturn : %d\n\n\n", ft_printf("%c\n%d\nAlors ? et bah %s\n%p", 's', 123, "Ouais dinguerie", p));
-	printf("\nReturn : %d", printf("%c\n%d\nAlors ? et bah %s\n%p", 's', 123, "Ouais dinguerie", p));
+	unsigned int i = 123245696;
+
+	printf("%u", i);
+	ft_printf("%u", i);
 }
+ */
