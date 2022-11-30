@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:57:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/29 17:49:18 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/30 10:45:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int n)
+static void	ft_putnbr(int n)
 {
 	char	i;
 
@@ -34,7 +34,7 @@ void	ft_putnbr(int n)
 	}
 }
 
-int	how_many_digits(long int n)
+static int	how_many_digits(long int n)
 {
 	int	i;
 

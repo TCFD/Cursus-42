@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:15:26 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/29 18:23:22 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/30 10:45:14 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	what_to_print(va_list list, char c)
+static int	what_to_print(va_list list, char c)
 {
 	if (c == 'c')
 		return (ft_putchar(va_arg(list, int)));

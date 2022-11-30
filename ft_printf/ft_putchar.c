@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:51:08 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/29 15:41:43 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/30 10:45:30 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putchar(char c)
+static int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);

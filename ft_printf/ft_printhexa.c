@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:34:50 by zbp15             #+#    #+#             */
-/*   Updated: 2022/11/29 17:49:10 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/11/30 10:45:37 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	how_many_digits3(unsigned int n)
+static int	how_many_digits3(unsigned int n)
 {
 	int				count;
 
@@ -27,7 +27,7 @@ int	how_many_digits3(unsigned int n)
 	return (count);
 }
 
-int	ft_print_hexa(unsigned int n, char *base)
+static int	ft_print_hexa(unsigned int n, char *base)
 {
 	char	*str;
 	int		i;
