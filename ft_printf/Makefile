@@ -6,7 +6,7 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/25 18:12:08 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/30 10:43:35 by rciaze           ###   ########.fr        #
+#    Updated: 2022/11/30 11:57:58 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ ft_putchar.c \
 ft_putnbr.c \
 ft_putstr.c \
 ft_print_adress.c \
-ft_strdup.c \
 ft_strlen.c \
 ft_putnbru.c \
 ft_printhexa.c 

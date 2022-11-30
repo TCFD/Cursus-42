@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:50:33 by zbp15             #+#    #+#             */
-/*   Updated: 2022/11/30 10:50:42 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 11:57:55 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int		ft_putstr(char *s);
 void	ft_putnbr(int n);
 size_t	ft_strlen(const char *str);
 int		how_many_digits(long int n);
-char	*ft_strdup(const char *s);
 int		ft_print_adress(void *p, char *base, int i);
 int		how_many_digits2(unsigned long int n);
 void	ft_putnbr2(unsigned int n);
