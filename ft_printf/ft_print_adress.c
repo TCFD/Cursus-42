@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 09:00:21 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:45:25 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:51:59 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	what_size_malloc(void *p)
+int	what_size_malloc(void *p)
 {
 	int				count;
 	long long int	n;
@@ -31,7 +31,7 @@ static int	what_size_malloc(void *p)
 	return (count);
 }
 
-static int	ft_print_adress(void *p, char *base, int i)
+int	ft_print_adress(void *p, char *base, int i)
 {
 	char						*str;
 	long long unsigned int		cpy;

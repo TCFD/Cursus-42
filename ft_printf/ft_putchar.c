@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:51:08 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:45:30 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:51:48 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);

@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:27:36 by zbp15             #+#    #+#             */
-/*   Updated: 2022/11/30 10:47:54 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:51:39 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void	ft_putnbr2(unsigned int n)
+void	ft_putnbr2(unsigned int n)
 {
 	char	i;
 
@@ -27,7 +27,7 @@ static void	ft_putnbr2(unsigned int n)
 	}
 }
 
-static int	how_many_digits2(unsigned long int n)
+int	how_many_digits2(unsigned long int n)
 {
 	int	i;
 

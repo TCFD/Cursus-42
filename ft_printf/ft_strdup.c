@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:21:35 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:48:02 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:50:47 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int		i;
 	char	*str;

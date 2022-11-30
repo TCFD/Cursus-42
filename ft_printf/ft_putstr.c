@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 09:55:39 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:47:58 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:50:49 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 

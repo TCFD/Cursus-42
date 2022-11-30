@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:34:50 by zbp15             #+#    #+#             */
-/*   Updated: 2022/11/30 10:45:37 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:51:25 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	how_many_digits3(unsigned int n)
+int	how_many_digits3(unsigned int n)
 {
 	int				count;
 
@@ -27,7 +27,7 @@ static int	how_many_digits3(unsigned int n)
 	return (count);
 }
 
-static int	ft_print_hexa(unsigned int n, char *base)
+int	ft_print_hexa(unsigned int n, char *base)
 {
 	char	*str;
 	int		i;

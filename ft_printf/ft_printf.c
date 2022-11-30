@@ -6,13 +6,13 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:15:26 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:45:14 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:51:51 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	what_to_print(va_list list, char c)
+int	what_to_print(va_list list, char c)
 {
 	if (c == 'c')
 		return (ft_putchar(va_arg(list, int)));
