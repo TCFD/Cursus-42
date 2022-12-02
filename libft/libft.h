@@ -13,9 +13,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <stddef.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -66,5 +69,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+void	ft_putnbr(int n);
+size_t	ft_strlen(const char *str);
+int		how_many_digits(long int n);
+int		ft_print_adress(void *p, char *base, int i);
+int		how_many_digits2(unsigned long int n);
+void	ft_putnbr2(unsigned int n);
+int		ft_print_hexa(unsigned int n, char *base);
+int		how_many_digits3(unsigned int n);
 
 #endif

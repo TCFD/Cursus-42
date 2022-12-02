@@ -6,15 +6,17 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 12:06:39 by rciaze            #+#    #+#              #
-#    Updated: 2022/11/25 15:07:40 by rciaze           ###   ########.fr        #
+#    Updated: 2022/12/02 11:54:02 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 COMP = cc $(FLAGS) -c
 all : $(NAME)
+CLEANF = rm -f *.o
+
 SRCS =	ft_atoi.c \
 ft_tolower.c \
 ft_toupper.c \
@@ -49,8 +51,7 @@ ft_memmove.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_calloc.c \
-
-SRCS_BONUS = ft_lstnew.c \
+ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
@@ -59,21 +60,25 @@ ft_lstdelone.c \
 ft_lstclear.c \
 ft_lstiter.c \
 ft_lstmap.c \
+ft_printf.c \
+ft_putchar.c \
+ft_putnbr.c \
+ft_putstr.c \
+ft_print_adress.c \
+ft_strlen.c \
+ft_putnbru.c \
+ft_printhexa.c
 
 OBJ = ${SRCS:.c=.o}
 
-OBJ_BONUS = ${SRCS_BONUS:.c=.o}
+clean : 
+	$(CLEANF)
 
-$(NAME) :
-	$(COMP) $(SRCS)
+$(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-bonus :
-	$(COMP) $(SRCS_BONUS)
-	ar rc $(NAME) $(OBJ_BONUS)
-	ranlib $(NAME)
-clean : 
-	rm -f *.o
+	$(CLEANF)
+
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
