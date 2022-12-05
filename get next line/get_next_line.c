@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:40:00 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/05 16:17:06 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/05 16:48:24 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*check(char *value_returned, int *boolean, char **str)
 char	*get_next_line(int fd)
 {
 	static char	*str;
-	char		*value_returned;
+	char		*value_returned; 
 	int			boolean;
 	char		*temp;
-	
+
 	value_returned = malloc((BUFFER_SIZE) * sizeof(char));
 	if (!value_returned)
 		return (NULL);
@@ -54,10 +54,10 @@ char	*get_next_line(int fd)
 		value_returned = check(value_returned, &boolean, &str);
 		if (boolean)
 		{
-			str = ft_strdup(value_returned);
+			temp = ft_strjoin(str, ft_strdup(value_returned));
+			value_returned = ft_strdup("");
 			read(fd, value_returned, BUFFER_SIZE);
-			temp = value_returned;
-			value_returned = ft_strjoin(str, temp);
+			value_returned = ft_strjoin(temp, value_returned);
 		}
 	}
 	return (value_returned);
@@ -71,7 +71,7 @@ int	main(void)
 	//get_next_line(fd);
 	//get_next_line(fd);
 	printf("%s", get_next_line(fd));
-	// printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
 	//printf("%s", get_next_line(fd));
 	//printf("%s", get_next_line(fd));
 	return (0);

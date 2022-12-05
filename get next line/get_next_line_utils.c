@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:26:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/05 15:58:40 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/05 16:44:35 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = s[i];
+		str[i] = s[i]; 
 		i++;
 	}
 	str[i] = '\0';
