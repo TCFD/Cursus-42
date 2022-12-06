@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:26:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/05 16:44:35 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/06 17:00:30 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (len == 0 || (size_t) start > ft_strlen((char *) s))
-		return (ft_strdup(""));
+		return (NULL);
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	str = malloc((len + 1) * sizeof(char));
@@ -61,6 +61,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = '\0';
 	free((void *)s);
 	return (str);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	c;
+
+	c = '\0';
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = c;
+		i++;
+	}
 }
 
 char	*ft_strdup(const char *s)
