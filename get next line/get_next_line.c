@@ -3,74 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 15:40:00 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/06 17:03:55 by zbp15            ###   ########.fr       */
+/*   Created: 2022/12/07 11:38:36 by rciaze            #+#    #+#             */
+/*   Updated: 2022/12/08 12:57:15 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*check(char *value_returned, int *boolean, char **str)
+char	*read_fail(char **str, char **buffer_string)
 {
-	int	i;
+	char	*temp;
+	int		i;
+
+	free(*buffer_string);
+	if (!str[0])
+		return (NULL);
+	i = 0;
+	while (str[0][i] != '\n' && str[0][i])
+		i++;
+	temp = ft_substr(str[0], 0, i + 1);
+	*str = ft_substr(str[0], i + 1, ft_strlen(str[0]) - i);
+	return (temp);
+}
+
+char	*cut_cut_cut(char **str, char **buffer_string, int fd)
+{
+	char	*temp;
+	int		i;
 
 	i = -1;
-	while (value_returned[++i] && *boolean)
+	while (buffer_string[0][++i])
 	{
-		if (value_returned[i] == '\n')
+		if (buffer_string[0][i] == '\n')
 		{
-			*str = ft_strdup(value_returned + i + 1);
-			value_returned = ft_substr(value_returned, 0, i + 1);
-			*boolean = 0;
+			temp = ft_strdup(buffer_string[0]);
+			free (buffer_string[0]);
+			buffer_string[0] = ft_strjoin(str[0], ft_substr(temp, 0, i + 1));
+			str[0] = ft_substr(temp, i + 1, ft_strlen(str[0]) - i);
+			free (temp);
+			return (buffer_string[0]);
 		}
-		else
-			*boolean = 1;
 	}
-	return (value_returned);
+	str[0] = ft_strjoin(str[0], buffer_string[0]);
+	ft_bzero(buffer_string[0], ft_strlen(buffer_string[0]));
+	return (get_next_line(fd));
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
-	char		*value_returned;
-	int			boolean;
-	char		*temp;
+	static char	*static_string;
+	char		*buffer_string;
 
-	value_returned = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!value_returned)
+	if (BUFFER_SIZE < 0)
 		return (NULL);
-	ft_bzero(value_returned, BUFFER_SIZE + 2);
-	boolean = 1;
-	if (!read(fd, value_returned, BUFFER_SIZE) && !str)
+	static_string = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buffer_string = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer_string || !static_string)
 		return (NULL);
-	value_returned = ft_strjoin(str, value_returned);
-	while (boolean)
-	{
-		value_returned = check(value_returned, &boolean, &str);
-		if (!boolean)
-			return (value_returned);
-		temp = ft_strdup(value_returned);
-		ft_bzero(value_returned, BUFFER_SIZE + 2);
-		boolean = read(fd, value_returned, BUFFER_SIZE);
-		value_returned = ft_strjoin(temp, value_returned);
-	}
-	return (value_returned);
+	if (!read(fd, buffer_string, BUFFER_SIZE))
+		return (read_fail(&static_string, &buffer_string));
+	return (cut_cut_cut(&static_string, &buffer_string, fd));
 }
 
-/* int	main(void)
+int	main(void)
 {
-	int		fd;
+	int fd = open("fichiertest.txt", O_RDONLY);
+	int	i = 0;
+	char	*tmp;
 
-	fd = open("fichiertest.txt", O_RDONLY);
-	//get_next_line(fd);
-	//printf("\n\n\n");
-	//get_next_line(fd);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	//printf("%s", get_next_line(fd));
-	//printf("%s", get_next_line(fd));
+	
+	while (i++ < 10)
+	{
+		tmp = get_next_line(fd);
+		printf("%d : %s", i, tmp);
+		free(tmp);
+	}
 	return (0);
 }
- */
