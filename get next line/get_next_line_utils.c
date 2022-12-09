@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:38:34 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/08 12:45:59 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/09 18:09:56 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (len == 0 || (size_t) start > ft_strlen((char *) s))
+	{
+		free((void *)s);
 		return (NULL);
+	}
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	str = malloc((len + 1) * sizeof(char));
@@ -32,6 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (i - start < (unsigned int)(len) && s[i])
 		str[j++] = s[i++];
 	str[j] = '\0';
+	free((void *)s);
 	return (str);
 }
 
@@ -52,14 +56,16 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*str;
 	int		i;
 
+	if (!s1)
+		return ((char *)s2);
+	if (!s2)
+		return ((char *)s1);
 	str = malloc(((ft_strlen(s1)) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = -1;
-	if (!s1)
-		return ((char *)s2);
 	while (s1[++i])
-		str[i] = s1[0];
+		str[i] = s1[i];
 	while (s2[i - ft_strlen(s1)])
 	{	
 		str[i] = s2[-ft_strlen(s1) + i];
@@ -79,7 +85,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	if (!s)
 		return (NULL);
-	str = malloc((ft_strlen((char *)(s)) + 1) * sizeof(char));
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s[i])
@@ -90,7 +96,6 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
-
 
 void	ft_bzero(void *s, size_t n)
 {
