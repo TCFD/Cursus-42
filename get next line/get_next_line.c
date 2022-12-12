@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:38:36 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/09 18:24:23 by zbp15            ###   ########.fr       */
+/*   Updated: 2022/12/12 12:26:45 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*read_fail(char **str, char **buffer_string)
 	int		i;
 
 	free(*buffer_string);
-	if (!str[0])
+	if (!str[0][0])
 		return (NULL);
 	i = 0;
 	while (str[0][i] != '\n' && str[0][i])
@@ -34,15 +34,15 @@ char	*cut_cut_cut3(char **str, char **buffer_string, int i)
 {
 	char	*temp;
 	char	*temp2;
-	int		count;
+	int		c;
 	int		count2;
 
-	temp = ft_strdup(buffer_string[0]);	
+	temp = ft_strdup(buffer_string[0]);
 	temp2 = ft_strdup(str[0]);
-	count = i + 1;
+	c = i + 1;
 	count2 = ft_strlen(temp) + ft_strlen(temp2);
-	buffer_string[0] = ft_substr(ft_strjoin(str[0], buffer_string[0]), 0, count);
-	str[0] = ft_substr(ft_strjoin(temp2, temp), count, count2 - count);
+	buffer_string[0] = ft_substr(ft_strjoin(str[0], buffer_string[0]), 0, c);
+	str[0] = ft_substr(ft_strjoin(temp2, temp), c, count2 - c);
 	return (buffer_string[0]);
 }
 
@@ -50,15 +50,15 @@ char	*cut_cut_cut2(char **str, char **buffer_string, int i)
 {
 	char	*temp;
 	char	*temp2;
-	int		count;
+	int		c;
 	int		count2;
 
-	temp = ft_strdup(buffer_string[0]);	
+	temp = ft_strdup(buffer_string[0]);
 	temp2 = ft_strdup(str[0]);
-	count = i + ft_strlen(temp2) + 1;
+	c = i + ft_strlen(temp2) + 1;
 	count2 = ft_strlen(temp) + ft_strlen(temp2);
-	buffer_string[0] = ft_substr(ft_strjoin(str[0], buffer_string[0]), 0, count);
-	str[0] = ft_substr(ft_strjoin(temp2, temp), count, count2 - count);
+	buffer_string[0] = ft_substr(ft_strjoin(str[0], buffer_string[0]), 0, c);
+	str[0] = ft_substr(ft_strjoin(temp2, temp), c, count2 - c);
 	return (buffer_string[0]);
 }
 
@@ -82,7 +82,6 @@ char	*cut_cut_cut(char **str, char **buffer_string, int fd)
 			return (cut_cut_cut2(str, buffer_string, i));
 	}
 	str[0] = ft_strjoin(str[0], buffer_string[0]);
-	//ft_bzero(buffer_string[0], ft_strlen(buffer_string[0]));
 	return (get_next_line(fd));
 }
 
@@ -103,25 +102,10 @@ char	*get_next_line(int fd)
 		boolean = 1;
 	if (boolean && static_string)
 		return (read_fail(&static_string, &buffer_string));
-	else if (boolean)
+	else if (boolean || (!buffer_string[0] && !static_string))
 	{
 		free(buffer_string);
 		return (NULL);
 	}
 	return (cut_cut_cut(&static_string, &buffer_string, fd));
 }
-
-/* int	main(void)
-{
-	int		fd = open("fichiertest.txt", O_RDONLY);
-	int		i = 0;
-	char	*tmp;
-
-	while (i++ < 14)
-	{
-		tmp = get_next_line(fd);
-		printf("%d : %s", i, tmp);
-		free(tmp);
-	}
-	return (0);
-} */

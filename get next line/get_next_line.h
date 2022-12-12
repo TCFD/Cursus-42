@@ -6,14 +6,14 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:06:59 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/08 11:00:43 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/12 12:32:58 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 0
+#  define BUFFER_SIZE 0
 # endif 
 # include <fcntl.h>
 # include <stdlib.h>
