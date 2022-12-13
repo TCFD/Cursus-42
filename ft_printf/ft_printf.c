@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:15:26 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/30 10:51:51 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/12 15:38:23 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,3 @@ int	ft_printf(const char *str, ...)
 	va_end(list);
 	return (len);
 }	
-
-/* int	main(void)
-{
-
-	unsigned int i = 123245696;
-
-	printf("%u", i);
-	ft_printf("%u", i);
-}
- */
