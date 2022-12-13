@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:38:36 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/12 12:26:45 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/13 16:12:28 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ char	*read_fail(char **str, char **buffer_string)
 
 	free(*buffer_string);
 	if (!str[0][0])
+	{
+		free(str[0]);
 		return (NULL);
+	}
 	i = 0;
 	while (str[0][i] != '\n' && str[0][i])
 		i++;
 	temp = ft_strdup(str[0]);
 	temp2 = ft_substr(str[0], 0, i + 1);
-	*str = ft_substr(temp, i + 1, ft_strlen(temp) - i);
+	str[0] = ft_substr(temp, i + 1, ft_strlen(temp) - i);
 	return (temp2);
 }
 

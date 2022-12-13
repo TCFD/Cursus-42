@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:06:59 by rciaze            #+#    #+#             */
-/*   Updated: 2022/12/12 12:32:58 by rciaze           ###   ########.fr       */
+/*   Updated: 2022/12/13 15:53:50 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdio.h>
 # include <unistd.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s);
