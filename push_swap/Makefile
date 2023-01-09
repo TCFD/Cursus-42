@@ -6,7 +6,7 @@
 #    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 10:50:48 by zbp15             #+#    #+#              #
-#    Updated: 2023/01/05 11:40:38 by zbp15            ###   ########.fr        #
+#    Updated: 2023/01/09 15:45:01 by zbp15            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ all : $(NAME)
 CLEANF = rm -f *.o
 
 SRCS =	push_swap.c \
-stack_function.c
+stack_function.c \
+stack_function2.c \
+short_stack_sorting.c
 
 OBJ = ${SRCS:.c=.o}
 

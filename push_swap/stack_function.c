@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 11:07:22 by zbp15             #+#    #+#             */
-/*   Updated: 2023/01/08 16:51:32 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/01/09 14:49:17 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,46 @@ void	push(t_stack *a_stack, t_stack *b_stack)
 	b_stack->content = content_b;
 }
 
-void	print_stack(t_stack *stack)
+void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	int	compteur;
+	int	compteur2;
 
-	compteur = 0;
-	while (compteur < stack->content_lenght)
+	compteur = -1;
+	compteur2 = 0;
+	ft_printf("\n\tA\t\tB\n\n\n");
+	if (stack_a->content_lenght == stack_b->content_lenght)
 	{
-		ft_printf("%i\n", stack->content[compteur]);
-		compteur++;
+		while (++compteur < stack_a->content_lenght)
+			ft_printf("%i\t%i\t\t%i\n", compteur, stack_a->content[compteur],
+				stack_b->content[compteur]);
+	}
+	else if (stack_a->content_lenght > stack_b->content_lenght)
+	{
+		while (++compteur < stack_a->content_lenght)
+		{
+			if (stack_a->content_lenght - compteur <= stack_b->content_lenght)
+			{
+				ft_printf("%i\t%i\t\t%i\t%i\n", compteur, stack_a->content[compteur],
+					stack_b->content[compteur2], compteur2);
+				compteur2++;
+			}
+			else
+				ft_printf("%i\t%i\t\n", compteur, stack_a->content[compteur]);
+		}
+	}
+	else
+	{
+		while (++compteur < stack_b->content_lenght)
+		{
+			if (stack_b->content_lenght - compteur <= stack_a->content_lenght)
+			{	
+				ft_printf("%i\t%i\t\t%i\t%i\n", compteur, stack_a->content[compteur],
+					stack_b->content[compteur2], compteur2);
+				compteur2++;
+			}
+			else
+				ft_printf("%i\t\t\t%i\n", compteur, stack_b->content[compteur]);
+		}
 	}
 }
