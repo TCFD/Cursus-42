@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:44:44 by zbp15             #+#    #+#             */
-/*   Updated: 2023/01/10 12:46:59 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:53:35 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,32 +75,31 @@ void	content_lenght3_part2(t_stack *stack)
 	}
 }
 
-void	content_lenght5(t_stack *stack_a, t_stack *stack_b, int i)
+void	content_lenght5(t_stack *s_a, t_stack *s_b, int i)
 {
 	ft_printf("pb\npb\n");
-	push(stack_a, stack_b);
-	push(stack_a, stack_b);
-	aguillage(stack_a, stack_b);
-	if (is_sorted(stack_b))
-		content_lenght2(stack_b);
-	while (stack_b->content[0] > stack_a->content[i]
-		&& i < stack_a->content_lenght - 1)
+	push(s_a, s_b);
+	push(s_a, s_b);
+	aguillage(s_a, s_b);
+	if (is_sorted(s_b))
+		content_lenght2(s_b);
+	while (s_b->content[0] > s_a->content[i] && i < s_a->content_lenght - 1)
 		i++;
-	if (i < stack_a->content_lenght / 2)
+	if (i < s_a->content_lenght / 2 && !is_sorted(s_a))
 	{
 		while (i-- >= 0)
 		{
 			ft_printf("ra\n");
-			rotate(stack_a);
+			rotate(s_a);
 		}
 	}
-	else
+	else if (!is_sorted(s_a))
 	{
 		while (i-- >= 0)
 		{
 			ft_printf("rra\n");
-			reverse_rotate(stack_a);
+			reverse_rotate(s_a);
 		}
 	}
-	content_lenght5_part2(stack_a, stack_b, 0, 0);
+	content_lenght5_part2(s_a, s_b, -1, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:01:36 by zbp15             #+#    #+#             */
-/*   Updated: 2023/01/10 12:20:05 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:47:27 by zbp15            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	aguillage(t_stack *stack_a, t_stack *stack_b);
 void	content_lenght2(t_stack *stack);
 void	content_lenght3(t_stack *stack);
 void	content_lenght3_part2(t_stack *stack);
-void	content_lenght5(t_stack *stack_a, t_stack *stack_b, int i);
-void	content_lenght5_part2(t_stack *stack_a, t_stack *stack_b, int i, int j);
-void	final_sort(t_stack *stack_a, int j);
+void	content_lenght5(t_stack *s_a, t_stack *s_b, int i);
+void	content_lenght5_part2(t_stack *s_a, t_stack *s_b, int i, int boolean);
+void	content_lenght5_part3(t_stack *stack_a, t_stack *stack_b);
 
 #endif
