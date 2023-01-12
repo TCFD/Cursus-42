@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   stack_function.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 11:07:22 by zbp15             #+#    #+#             */
-/*   Updated: 2023/01/10 15:05:10 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/01/12 17:27:39 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-void	swap(t_stack *stack)
+void	swap(t_stack *stack, char c)
 {
 	int	temp;
 
+	ft_printf("s%c\n", c);
 	if (stack->content_lenght < 2)
 		return ;
 	temp = stack->content[0];
@@ -24,12 +25,11 @@ void	swap(t_stack *stack)
 	stack->content[1] = temp;
 }
 
-void	rotate(t_stack *stack)
+void	rotate(t_stack *stack, char c)
 {
 	int	temp;
 	int	temp2;
 	int	i;
-
 
 	if (stack->content_lenght < 2)
 		return ;
@@ -43,14 +43,14 @@ void	rotate(t_stack *stack)
 		i++;
 	}
 	stack->content[stack->content_lenght - 1] = temp2;
+	ft_printf("r%c\n", c);
 }
 
-void	reverse_rotate(t_stack *stack)
+void	reverse_rotate(t_stack *stack, char c)
 {
 	int	temp;
 	int	temp2;
 	int	i;
-
 
 	if (stack->content_lenght < 2)
 		return ;
@@ -64,9 +64,10 @@ void	reverse_rotate(t_stack *stack)
 		i--;
 	}
 	stack->content[i] = temp2;
+	ft_printf("rr%c\n", c);
 }
 
-void	push(t_stack *a_stack, t_stack *b_stack)
+void	push(t_stack *a_stack, t_stack *b_stack, char c)
 {
 	int	*content_a;
 	int	*content_b;
@@ -89,6 +90,7 @@ void	push(t_stack *a_stack, t_stack *b_stack)
 	free(b_stack->content);
 	a_stack->content = content_a;
 	b_stack->content = content_b;
+	ft_printf("p%c\n", c);
 }
 
 void	print_stack(t_stack *stack_a, t_stack *stack_b)

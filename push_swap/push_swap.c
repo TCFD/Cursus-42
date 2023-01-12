@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 10:46:21 by zbp15             #+#    #+#             */
-/*   Updated: 2023/01/10 16:28:26 by zbp15            ###   ########.fr       */
+/*   Updated: 2023/01/12 18:08:10 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,14 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	//int	i = 9;
 
 	stack_a = malloc(sizeof(t_stack));
-	stack_a->content = malloc(sizeof(int) * 5);
-	stack_a->content_lenght = 5;
-	/*while (i >= 0)
-	{
-		stack_a->content[i] = i;
-		i--;
-	}
-	i = 9;*/
-	stack_a->content[0] = 7;
-	stack_a->content[1] = 512;
-	stack_a->content[2] = 210;
-	stack_a->content[3] = 10;
-	stack_a->content[4] = 1;
+	stack_a->content_lenght = argc - 1;
+	stack_a->content = malloc(sizeof(int) * stack_a->content_lenght);
+	get_stack(stack_a, argc, argv);
 	stack_b = malloc(sizeof(t_stack));
 	stack_b->content = malloc(sizeof(int) * 0);
 	stack_b->content_lenght = 0;
-	/*while (i >= 0)
-	{
-		stack_b->content[i] = i + 500;
-		i--;
-	}*/
 	//ft_printf("\nAvant modifs\n");
 	//print_stack(stack_a, stack_b);
 	//ft_printf("\nApres modifs\n\n");
@@ -55,8 +39,6 @@ int	main(int argc, char **argv)
 	//else
 	//	ft_printf("\nA n'est pas trié, ouin ouin ouin, "
 	//		"c le bruit que tu fais pck t nul\n");
-	(void)argc;
-	(void)argv;
 	free(stack_a->content);
 	free(stack_a);
 	free(stack_b->content);

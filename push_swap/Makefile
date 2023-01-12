@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zbp15 <zbp15@student.42.fr>                +#+  +:+       +#+         #
+#    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 10:50:48 by zbp15             #+#    #+#              #
-#    Updated: 2023/01/10 12:19:30 by zbp15            ###   ########.fr        #
+#    Updated: 2023/01/12 13:48:16 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,6 @@ $(NAME) : $(OBJ)
 	make -C libft
 	mv libft/libft.a .
 	$(COMP) $(OBJ) libft.a -o $(NAME)
-
-	$(CLEANF)
 
 fclean : clean
 	make fclean -C libft

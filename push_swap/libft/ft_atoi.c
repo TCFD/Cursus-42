@@ -6,7 +6,7 @@
 /*   By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:33:17 by rciaze            #+#    #+#             */
-/*   Updated: 2022/11/24 11:17:25 by rciaze           ###   ########.fr       */
+/*   Updated: 2023/01/12 15:37:36 by rciaze           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,9 @@ int	ft_atoi(const char *str)
 	i = 0;
 	return_value = 0;
 	boolean = 0;
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n' || str[i] == '\r'
-		|| str[i] == '\t' || str[i] == '\v')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			boolean = 1;
+		boolean = 1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')

@@ -6,14 +6,14 @@
 #    By: rciaze <rciaze@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 12:06:39 by rciaze            #+#    #+#              #
-#    Updated: 2022/12/02 11:54:02 by rciaze           ###   ########.fr        #
+#    Updated: 2023/01/12 13:48:13 by rciaze           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror
-COMP = cc $(FLAGS) -c
+CFLAGS = -Wall -Wextra -Werror -c
+COMP = cc $(FLAGS)
 all : $(NAME)
 CLEANF = rm -f *.o
 
@@ -77,7 +77,6 @@ clean :
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	$(CLEANF)
 
 fclean : clean
 	rm -f $(NAME)
